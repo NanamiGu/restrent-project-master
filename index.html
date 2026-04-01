@@ -27,13 +27,19 @@
   <link rel="icon" type="image/jpeg" href="logo.jpg">
   <link rel="apple-touch-icon" href="logo.jpg">
 
+  <!-- Preconnects & Preloads for LCP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" as="video" href="photo/hero.mp4">
+  
   <link
     href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+  
+  <!-- Non-blocking FontAwesome (INP/FCP) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+    media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
@@ -60,7 +66,7 @@
     </ul>
   </nav>
   <header id="home" class="hero">
-    <video autoplay muted loop playsinline class="background-video">
+    <video autoplay muted loop playsinline preload="auto" poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="background-video">
       <source src="photo/hero.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
@@ -115,20 +121,20 @@
     <div class="grid items-center gap-8 lg:grid-cols-2">
       <div class="space-y-4" data-aos="fade-right" data-aos-delay="200">
         <div class="overflow-hidden rounded-3xl shadow-lg">
-          <video autoplay muted loop playsinline class="w-full h-[380px] md:h-[480px] object-cover">
+          <video autoplay muted loop playsinline preload="none" poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="w-full h-[380px] md:h-[480px] object-cover">
             <source src="photo/2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
-          <img loading="lazy" src="photo/jus.jpg" alt="Sakura Juice"
+          <img loading="lazy" decoding="async" width="400" height="160" src="photo/jus.jpg" alt="Sakura Juice"
             class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
-          <img loading="lazy" src="photo/jus-2.jpeg" alt="Fresh Drinks"
+          <img loading="lazy" decoding="async" width="400" height="160" src="photo/jus-2.jpeg" alt="Fresh Drinks"
             class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
-          <img loading="lazy" src="photo/gato-2.jpg" alt="Signature Cake"
+          <img loading="lazy" decoding="async" width="400" height="160" src="photo/gato-2.jpg" alt="Signature Cake"
             class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
-          <img loading="lazy" src="photo/gato.jpg" alt="Signature Cake"
+          <img loading="lazy" decoding="async" width="400" height="160" src="photo/gato.jpg" alt="Signature Cake"
             class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
         </div>
       </div>
@@ -450,12 +456,14 @@
     </svg>
   </button>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      offset: 50,
-      duration: 800,
+    window.addEventListener('load', () => {
+      AOS.init({
+        once: true,
+        offset: 50,
+        duration: 800,
+      });
     });
 
     function toggleMenu() {
