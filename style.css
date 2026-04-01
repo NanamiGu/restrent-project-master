@@ -4,8 +4,25 @@
   --accent-lion: #C7A07A;
   --text-kobicha: #734128;
   --dark-bistre: #391E10;
-  --sakura-pink: #E982A0; /* من شعارهم */
-  /* لون Bistre للنصوص الرئيسية */
+  --sakura-pink: #E982A0;
+}
+
+/* Skip link for keyboard/screen-reader users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--sakura-pink);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
 }
 
 
