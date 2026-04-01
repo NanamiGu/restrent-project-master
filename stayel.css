@@ -16,6 +16,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   padding-top: 85px;
+  overflow-x: hidden;
 }
 
 section,
@@ -25,6 +26,8 @@ header {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   background-color: var(--bg-ivory);
   border-bottom: 2px solid var(--section-dun);
   width: 100%;
@@ -35,7 +38,7 @@ header {
   justify-content: space-between;
   padding: 0 2rem;
   z-index: 1000;
-  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .nav-header {
@@ -43,6 +46,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: auto;
+  box-sizing: border-box;
 }
 
 .logo{
@@ -159,17 +163,20 @@ header {
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
+    align-items: stretch;
     padding: 0.5rem 1.5rem;
     height: auto;
   }
 
   .nav-header {
+    display: flex;
+    align-items: center;
     width: 100%;
     justify-content: space-between;
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
     color: var(--dark-bistre);
   }
 
