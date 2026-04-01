@@ -47,6 +47,7 @@
 
 <body>
   <nav class="navbar">
+    <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scrollBar"></div></div>
     <div class="nav-header">
       <a href="#home"><img src="logo.jpg" alt="SAKURA CAFÉ" class="logo"></a>
       <button class="mobile-menu-btn" aria-label="Toggle Menu" onclick="toggleMenu()">
@@ -71,7 +72,7 @@
     </video>
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>The Art of the Chill</h1>
+      <h1 class="text-gradient-animated pb-2">The Art of the Chill</h1>
       <p>Elevating your chill time with the perfect flip. Whether it's a quick break or a deep hang, we’ve got the
         flavors to match your mood.</p>
       <div class="flex flex-wrap justify-center gap-4 md:gap-6 py-8">
@@ -141,7 +142,7 @@
 
       <div class="space-y-6" data-aos="fade-left" data-aos-delay="400">
         <div class="text-center lg:text-left">
-          <h2 class="text-3xl font-bold text-gray-900 md:text-3xl lg:text-4xl text-center lg:text-left">About Us</h2>
+          <h2 class="text-3xl font-bold text-gray-900 md:text-3xl lg:text-4xl text-center lg:text-left text-gradient-animated pb-1">About Us</h2>
           <div class="mt-2 flex justify-center lg:justify-start">
             <span class="w-16 h-1 bg-pink-400 rounded-full"></span>
           </div>
@@ -173,8 +174,7 @@
     <div class="max-w-7xl mx-auto">
 
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl md:text-5xl font-bold text-[#391E10] font-serif mb-4">Our <span class="text-[#E982A0]">Full
-            Menu</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-[#391E10] font-serif mb-4 text-gradient-animated pb-2">Our Full Menu</h2>
         <div class="w-24 h-1 bg-[#E982A0] mx-auto rounded-full"></div>
         <p class="text-[#734128] mt-4 italic font-medium">Sweet moments in every bite</p>
       </div>
@@ -182,7 +182,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <div
-          class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-[var(--sakura-pink)] group"
+          class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 glow-on-hover group"
           data-aos="fade-up">
           <h3
             class="text-2xl font-bold text-[#E982A0] mb-6 flex items-center border-b border-[var(--section-dun)] pb-2 group-hover:border-[var(--sakura-pink)] transition-colors">
@@ -206,7 +206,7 @@
         </div>
 
         <div
-          class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-[var(--sakura-pink)] group"
+          class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 glow-on-hover group"
           data-aos="fade-up">
           <h3
             class="text-2xl font-bold text-[#E982A0] mb-6 flex items-center border-b border-[var(--section-dun)] pb-2 group-hover:border-[var(--sakura-pink)] transition-colors">
@@ -227,7 +227,7 @@
         </div>
 
         <div
-          class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-[var(--sakura-pink)] group"
+          class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 glow-on-hover group"
           data-aos="fade-up">
           <h3
             class="text-2xl font-bold text-[#E982A0] mb-6 flex items-center border-b border-[var(--section-dun)] pb-2 group-hover:border-[var(--sakura-pink)] transition-colors">
@@ -248,7 +248,7 @@
         </div>
 
         <div
-          class="lg:col-span-2 bg-[var(--bg-ivory)] p-10 rounded-[3rem] shadow-xl border-2 border-[var(--sakura-pink)]/30 overflow-hidden relative group transform transition-all duration-700 hover:rotate-1"
+          class="lg:col-span-2 bg-[var(--bg-ivory)] p-10 rounded-[3rem] shadow-xl border-2 border-[var(--sakura-pink)]/30 overflow-hidden relative group transform transition-all duration-700 glow-on-hover hover:rotate-1"
           data-aos="fade-up" data-aos-delay="200">
           <div
             class="absolute -right-5 -top-5 text-7xl opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-500">
@@ -475,6 +475,12 @@
 
     const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', () => {
+      // Scroll Progress Bar Logic
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      document.getElementById('scrollBar').style.width = scrollPercent + '%';
+
       if (window.scrollY > 300) {
         backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
         backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
