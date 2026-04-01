@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="stayel.css">
+    <title>SAKURA CAFÉ</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-header">
+            <img src="logo.jpg" alt="SAKURA CAFÉ" class="logo">
+            <button class="mobile-menu-btn" aria-label="Toggle Menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </button>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+            <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="home" class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="photo/hero.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>The Art of the Chill</h1>
+            <p>Elevating your chill time with the perfect flip. Whether it's a quick break or a deep hang, we’ve got the flavors to match your mood.</p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 py-8">
+                <a href="https://www.instagram.com/sakura.algiers/" target="_blank" rel="noopener noreferrer" class="group flex h-14 w-14 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-[var(--sakura-pink)] hover:border-[var(--sakura-pink)] hover:scale-110 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="group flex h-14 w-14 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-[var(--sakura-pink)] hover:border-[var(--sakura-pink)] hover:scale-110 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="sr-only">Map</span>
+                </a>
+                <a href="mailto:amine.fdfd@gmail.com" class="group flex h-14 w-14 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-[var(--sakura-pink)] hover:border-[var(--sakura-pink)] hover:scale-110 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span class="sr-only">Email</span>
+                </a>
+                <a href="tel:0540978673" class="group flex h-14 w-14 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-[var(--sakura-pink)] hover:border-[var(--sakura-pink)] hover:scale-110 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span class="sr-only">Phone</span>
+                </a>
+            </div>
+            <a href="#menu" class="btn-outline">see menu</a>
+        </div>
+    </header>
+    <section id="about" class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid items-center gap-8 lg:grid-cols-2">
+        <div class="space-y-4">
+          <div class="overflow-hidden rounded-3xl shadow-lg">
+            <video autoplay muted loop playsinline class="w-full h-[380px] md:h-[480px] object-cover">
+              <source src="photo/2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <img loading="lazy"
+             src="photo/jus.jpg"
+                 alt="Sakura Juice"
+                 class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
+            <img loading="lazy"
+             src="photo/jus-2.jpeg"
+                 alt="Fresh Drinks"
+                 class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
+            <img loading="lazy"
+             src="photo/gato-2.jpg"
+                 alt="Signature Cake"
+                 class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
+            <img loading="lazy"
+             src="photo/gato.jpg"
+                 alt="Signature Cake"
+                 class="w-full h-40 rounded-3xl object-cover shadow-sm hover:scale-[1.02] transition-transform duration-300">
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="text-center lg:text-left">
+            <h2 class="text-3xl font-bold text-gray-900 md:text-3xl lg:text-4xl text-center lg:text-left">About Us</h2>
+            <div class="mt-2 flex justify-center lg:justify-start">
+              <span class="w-16 h-1 bg-pink-400 rounded-full"></span>
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-white/80 p-8 shadow-xl backdrop-blur-md">
+            <p class="text-[#391E10] leading-relaxed text-lg">
+              At <span class="text-pink-600 font-semibold">SAKURA CAFÉ</span>, we blend the art of coffee with a passion for creating a welcoming space. Our mission is to provide a haven for coffee lovers, where every cup tells a story of quality and care.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-3xl bg-[#FDFCE8]/90 p-6 shadow-sm">
+              <h3 class="text-xl font-semibold text-[#391E10]">Warm atmosphere</h3>
+              <p class="mt-2 text-gray-600">Relax in a cozy setting designed for comfort and connection.</p>
+            </div>
+            <div class="rounded-3xl bg-[#FDFCE8]/90 p-6 shadow-sm">
+              <h3 class="text-xl font-semibold text-[#391E10]">Quality first</h3>
+              <p class="mt-2 text-gray-600">Every cup is made from carefully selected ingredients and expert craft.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="menu" class="py-20 px-4 md:px-[10%]">
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#391E10] font-serif mb-4">Our <span class="text-[#E982A0]">Full Menu</span></h2>
+      <div class="w-24 h-1 bg-[#E982A0] mx-auto rounded-full"></div>
+      <p class="text-[#734128] mt-4 italic font-medium">Sweet moments in every bite</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-[var(--sakura-pink)] group">
+        <h3 class="text-2xl font-bold text-[#E982A0] mb-6 flex items-center border-b border-[var(--section-dun)] pb-2 group-hover:border-[var(--sakura-pink)] transition-colors">
+          🌸 Crêpes
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex justify-between items-center"><span class="text-[#391E10]">Classique</span> <span class="font-bold bg-[var(--section-dun)]/30 px-3 py-1 rounded-lg">400 DA</span></li>
+          <li class="flex justify-between items-center"><span class="text-[#391E10]">Nutella</span> <span class="font-bold bg-[var(--section-dun)]/30 px-3 py-1 rounded-lg">550 DA</span></li>
+          <li class="flex justify-between items-center"><span class="text-[#391E10]">Bueno / Lotus</span> <span class="font-bold bg-[var(--section-dun)]/30 px-3 py-1 rounded-lg">500 DA</span></li>
+          <li class="flex justify-between items-center font-semibold text-[#E982A0]"><span class="group-hover:translate-x-2 transition-transform">Pistache</span> <span class="font-bold bg-[var(--sakura-pink)]/20 px-3 py-1 rounded-lg">650 DA</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-[var(--sakura-pink)] group">
+        <h3 class="text-2xl font-bold text-[#E982A0] mb-6 flex items-center border-b border-[var(--section-dun)] pb-2 group-hover:border-[var(--sakura-pink)] transition-colors">
+          🍦 Ice Roll
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex justify-between items-center"><span class="text-[#391E10]">Nutella / Bueno</span> <span class="font-bold bg-[var(--section-dun)]/30 px-3 py-1 rounded-lg">700 DA</span></li>
+          <li class="flex justify-between items-center"><span class="text-[#391E10]">Snickers / Mars</span> <span class="font-bold bg-[var(--section-dun)]/30 px-3 py-1 rounded-lg">800 DA</span></li>
+          <li class="flex justify-between items-center font-semibold text-[#E982A0]"><span class="group-hover:translate-x-2 transition-transform">Pistache</span> <span class="font-bold bg-[var(--sakura-pink)]/20 px-3 py-1 rounded-lg">700 DA</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-[var(--bg-ivory)] p-8 rounded-[2.5rem] shadow-lg border border-[var(--section-dun)] transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-[var(--sakura-pink)] group">
+        <h3 class="text-2xl font-bold text-[#E982A0] mb-6 flex items-center border-b border-[var(--section-dun)] pb-2 group-hover:border-[var(--sakura-pink)] transition-colors">
+          🍰 Cakes
+        </h3>
+        <ul class="space-y-6">
+          <li class="group/item">
+            <p class="font-bold text-[#391E10]">San Sebastien</p>
+            <p class="text-xs text-[#734128] flex justify-between mt-1">Chocolat / Lotus / Pistache <span class="font-bold text-[#E982A0]">600-700 DA</span></p>
+          </li>
+          <li class="group/item">
+            <p class="font-bold text-[#391E10]">Tiramisu New</p>
+            <p class="text-xs text-[#734128] flex justify-between mt-1">Bueno / Fraise / Citron <span class="font-bold text-[#E982A0]">500-600 DA</span></p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2 bg-[var(--bg-ivory)] p-10 rounded-[3rem] shadow-xl border-2 border-[var(--sakura-pink)]/30 overflow-hidden relative group transform transition-all duration-700 hover:rotate-1">
+        <div class="absolute -right-5 -top-5 text-7xl opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-500">🌮</div>
+        <h3 class="text-3xl font-bold text-[#391E10] mb-8 flex items-center">🌮 Saku-Tacos <span class="ml-4 text-sm bg-[var(--sakura-pink)] text-white px-3 py-1 rounded-full font-normal">Sakura Signature</span></h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-[var(--section-dun)]/20 p-5 rounded-2xl text-center hover:bg-[var(--sakura-pink)] hover:text-white transition-all duration-300 shadow-inner">
+            <p class="text-xs uppercase font-bold opacity-70">2 Pieces</p>
+            <p class="text-2xl font-black">500 <small class="text-xs">DA</small></p>
+          </div>
+          <div class="bg-[var(--sakura-pink)]/10 p-5 rounded-2xl text-center border border-[var(--sakura-pink)]/30 hover:bg-[var(--sakura-pink)] hover:text-white transition-all duration-300 shadow-inner">
+            <p class="text-xs uppercase font-bold opacity-70">4 Pieces</p>
+            <p class="text-2xl font-black">900 <small class="text-xs">DA</small></p>
+          </div>
+          <div class="bg-[var(--section-dun)]/20 p-5 rounded-2xl text-center hover:bg-[var(--sakura-pink)] hover:text-white transition-all duration-300 shadow-inner">
+            <p class="text-xs uppercase font-bold opacity-70">6 Pieces</p>
+            <p class="text-2xl font-black">1300 <small class="text-xs">DA</small></p>
+          </div>
+          <div class="bg-[var(--section-dun)]/20 p-5 rounded-2xl text-center hover:bg-[var(--sakura-pink)] hover:text-white transition-all duration-300 shadow-inner">
+            <p class="text-xs uppercase font-bold opacity-70">10 Pieces</p>
+            <p class="text-2xl font-black">2000 <small class="text-xs">DA</small></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="max-w-7xl mx-auto px-4 py-20">
+      <div class="rounded-3xl bg-white/90 p-8 shadow-xl">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-[#391E10]">Get in Touch</h2>
+          <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Stop by for sakura-inspired coffee, book a table, or send us a message.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-3xl bg-[#FDFCE8]/95 p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-[#391E10]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline h-5 w-5 fill-current text-pink-600 mr-2" aria-hidden="true"><path d="M12 2.5c-3.59 0-6.5 2.91-6.5 6.5 0 4.85 4.75 9.83 5.83 11.05a1 1 0 0 0 1.34 0C14.75 18.83 19.5 13.85 19.5 9c0-3.59-2.91-6.5-6.5-6.5Zm0 9a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>Location</h3>
+            <p class="mt-2 text-gray-600">123 Sakura Street, City Center</p>
+            <a href="https://maps.app.goo.gl/3nubbBc7TwkDFWX38" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block text-pink-600 hover:text-pink-700">Open map</a>
+          </div>
+          <div class="rounded-3xl bg-[#FDFCE8]/95 p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-[#391E10]">Hours</h3>
+            <p class="mt-2 text-gray-600">Mon - Sun: 8am - 10pm</p>
+          </div>
+          <div class="rounded-3xl bg-[#FDFCE8]/95 p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-[#391E10]">Contact</h3>
+            <p class="mt-4 text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline h-5 w-5 fill-current text-pink-600 mr-2" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05l-2.2 2.2Z"/></svg><a href="tel:0540978673" class="text-pink-600 hover:text-pink-700">0540978673</a></p>
+            <p class="mt-4 text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline h-5 w-5 fill-current text-pink-600 mr-2" aria-hidden="true"><path d="M3.75 5.25h16.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H3.75a.75.75 0 0 1-.75-.75v-12a.75.75 0 0 1 .75-.75Zm1.5 1.5v.972l6.246 4.658a.75.75 0 0 0 .908 0L18.75 7.722V6.75H5.25Zm12.75 2.028-5.463 4.077a2.25 2.25 0 0 1-2.574 0L5.25 8.778V17.25h12.75V8.778Z"/></svg><a href="mailto:amine.fdfd@gmail.com" class="text-pink-600 hover:text-pink-700">amine.fdfd@gmail.com</a></p>
+            <p class="mt-4 text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline h-5 w-5 fill-current text-pink-600 mr-2" aria-hidden="true"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75V16.25A5.75 5.75 0 0 0 7.75 22H16.25A5.75 5.75 0 0 0 22 16.25V7.75A5.75 5.75 0 0 0 16.25 2H7.75ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm5.5-.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17.5 6.75Z"/></svg><a href="https://www.instagram.com/sakura.algiers/" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:text-pink-700">@sakura.algiers</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        if (window.innerWidth <= 768) {
+          navLinks.classList.toggle('active');
+        }
+      }
+    </script>
+</body>
+</html>

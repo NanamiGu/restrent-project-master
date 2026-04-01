@@ -1,0 +1,244 @@
+:root {
+  --bg-ivory: #FDFCE8;
+  --section-dun: #E2CEB1;
+  --accent-lion: #C7A07A;
+  --text-kobicha: #734128;
+  --dark-bistre: #391E10;
+  --sakura-pink: #E982A0; /* من شعارهم */
+  /* لون Bistre للنصوص الرئيسية */
+}
+
+
+body {
+  background: linear-gradient(180deg,var(--section-dun) 0%, var(--accent-lion) 100%);
+  min-height: 100vh; /* لضمان تغطية كامل الشاشة */
+  color: var(--dark-bistre);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 85px;
+}
+
+section,
+header {
+  scroll-margin-top: 110px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color: var(--bg-ivory);
+  border-bottom: 2px solid var(--section-dun);
+  width: 100%;
+  min-height: 85px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+}
+
+.logo{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  color: var(--dark-bistre);
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links li a {
+ position: relative;
+ font-size: 17px;
+ font-weight: 500;
+ font-style: italic;
+ text-decoration: none;
+ color: var(--dark-bistre);
+ transition: 0.2s;
+}
+.nav-links li a:hover{
+    color: var(--sakura-pink);
+    text-shadow: 2px 2px 20px #d8597de5; /* تأثير توهج بسيط عند التفاعل */
+}
+.nav-link:hover {
+  color: var(--sakura-pink); /* لمسة خفيفة من هوية المحل عند التفاعل */
+}
+.background-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* لجعل الفيديو خلف المحتوى */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* لضمان تغطية كامل المساحة بشكل متناسق */
+  filter: blur(4px); /* لإضافة تأثير ضبابي خفيف على الفيديو */
+}
+/* طبقة تظليل لجعل النص يبرز فوق الفيديو */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(57, 30, 16, 0.5); /* لون Bistre بلمسة شفافة */
+    z-index: 0;
+}
+.hero {
+ width: 100%;
+ height: 800px; /* ارتفاع مناسب لجزء الهيرو */
+ padding-bottom: 80px;
+ padding-top: 80px;
+ background-size: cover;
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+}
+.hero-content {
+   
+  z-index: 2; /* لضمان ظهور النص فوق الفيديو */
+ position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 800px; /* عرض محدود لمحتوى الهيرو */
+    padding: 2rem; /* مسافة داخلية حول النص */
+    background: transparent;
+    height: auto; /* لضبط ارتفاع المحتوى حسب النص */
+}
+.hero-content h1 {
+  font-size: 3.5rem; /* حجم كبير للعنوان الرئيسي */
+  line-height: 1.1; /* تحسين تباعد الأسطر */
+  color: var(--bg-ivory); /* لون العنوان الرئيسي */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* تأثير توهج بسيط على العنوان */
+  margin-bottom: 1rem; /* مسافة بين العنوان والنص الفرعي */
+}
+.hero-content p{
+    color: var(--section-dun);
+    font-size: 1.2rem;
+    margin-bottom: 2rem; /* مسافة بين النص الفرعي وزر الدعوة إلى العمل */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* تأثير توهج خفيف على النص الفرعي */
+}
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--sakura-pink); /* لون Bistre لحدود الزر */
+  color: var(--sakura-pink);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px; /* لجعل الزر مستدير الحواف */
+  transition: 0.3s; /* لإضافة تأثير سلس عند التفاعل */
+}
+.btn-outline:hover {
+  background-color: var(--sakura-pink);
+  color: #fff; /* change button text to white on hover */
+  border-color: var(--sakura-pink); /* تغيير لون الحدود إلى لون الزهرة عند التفاعل */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25); /* إضافة تأثير توهج بسيط عند التفاعل */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 0.5rem 1.5rem;
+    height: auto;
+  }
+
+  .nav-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    color: var(--dark-bistre);
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 0.5rem 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px dashed rgba(199, 160, 122, 0.4);
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .hero {
+    min-height: calc(100vh - 100px);
+    padding: 8rem 0 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-outline {
+    padding: 0.7rem 1.25rem;
+  }
+}
